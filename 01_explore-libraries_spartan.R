@@ -1,38 +1,22 @@
 #' ---
 #' output: github_document
 #' ---
+library(tidyverse)
 
-#' Installed packages
 
-## use installed.packages() to get all installed packages
-packages<- installed.packages()
+#' Storing Information on Installed packages
+packages<- as.tibble(installed.packages())
+#number of packages
+nrow(packages)
 
 #' Exploring the packages
+table(packages$Built)
+packages %>%
+  count(Built) %>%
+  mutate(prop= n/sum(n))
+  
+# table(package_df$Priority)
+# table(package_df$Priority, package_df$LibPath)
+# prop.table(table(package_df$NeedsCompilation))
 
-## count some things! inspiration
-##   * tabulate by LibPath, Priority, or both
-##   * what proportion need compilation?
-##   * how break down re: version of R they were built on
-package_df<- data.frame(packages)
-table(package_df$LibPath)
-table(package_df$Priority)
-table(package_df$Priority, package_df$LibPath)
-prop.table(table(package_df$NeedsCompilation))
-
-#' Reflections
-
-## reflect on ^^ and make a few notes to yourself; inspiration
-##   * does the number of base + recommended packages make sense to you?
-##   * how does the result of .libPaths() relate to the result of .Library?
-
-
-#' Going further
-
-## if you have time to do more ...
-
-## is every package in .Library either base or recommended?
-## study package naming style (all lower case, contains '.', etc
-## use `fields` argument to installed.packages() to get more info and use it!
-
-test<- data.frame(installed.packages(noCache = T))
 
