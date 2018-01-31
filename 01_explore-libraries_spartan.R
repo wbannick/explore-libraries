@@ -5,7 +5,6 @@
 
 ## use installed.packages() to get all installed packages
 packages<- installed.packages()
-packages
 ## how many packages?
 #198
 
