@@ -1,12 +1,11 @@
-#' Which libraries does R search for packages?
-
+#' ---
+#' output: github_document
+#' ---
 
 #' Installed packages
 
 ## use installed.packages() to get all installed packages
 packages<- installed.packages()
-## how many packages?
-#198
 
 #' Exploring the packages
 
