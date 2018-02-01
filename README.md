@@ -1,5 +1,6 @@
 # explore-libraries
 For RStudio Conference
 
-Testing github commmit
 
+Check this out yo!
+[01_explore-libraries_spartan.md](01_explore-libraries_spartan.md)
